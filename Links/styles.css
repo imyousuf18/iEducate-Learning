@@ -1,0 +1,9 @@
+.list-i {
+    margin-left: 8%;
+    text-align: left;
+}
+
+.list-i:hover {
+    color: rgb(77, 77, 77);
+    font-weight: bold;
+}

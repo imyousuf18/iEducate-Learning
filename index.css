@@ -1,0 +1,21 @@
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .head {
+        max-width: 1235px;
+        padding: 10px 7px;
+    }
+    
+    .logo img {
+        max-width: none;
+        height: 50px;
+        border-radius: 50%;
+    }
+    
+    .background {
+        background: rgba(0, 0, 0, 0.7);
+    }

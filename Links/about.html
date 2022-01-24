@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        var cont = 0;
+
+        function loopSlider() {
+            var xx = setInterval(function() {
+                switch (cont) {
+                    case 0:
+                        {
+                            $("#slider-1").fadeOut(400);
+                            $("#slider-2").delay(400).fadeIn(400);
+                            $("#sButton1").removeClass("bg-purple-800");
+                            $("#sButton2").addClass("bg-purple-800");
+                            cont = 1;
+
+                            break;
+                        }
+                    case 1:
+                        {
+
+                            $("#slider-2").fadeOut(400);
+                            $("#slider-1").delay(400).fadeIn(400);
+                            $("#sButton2").removeClass("bg-purple-800");
+                            $("#sButton1").addClass("bg-purple-800");
+
+                            cont = 0;
+
+                            break;
+                        }
+
+
+                }
+            }, 8000);
+
+        }
+
+        function reinitLoop(time) {
+            clearInterval(xx);
+            setTimeout(loopSlider(), time);
+        }
+
+
+
+        function sliderButton1() {
+
+            $("#slider-2").fadeOut(400);
+            $("#slider-1").delay(400).fadeIn(400);
+            $("#sButton2").removeClass("bg-purple-800");
+            $("#sButton1").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont = 0
+
+        }
+
+        function sliderButton2() {
+            $("#slider-1").fadeOut(400);
+            $("#slider-2").delay(400).fadeIn(400);
+            $("#sButton1").removeClass("bg-purple-800");
+            $("#sButton2").addClass("bg-purple-800");
+            reinitLoop(4000);
+            cont = 1
+
+        }
+
+        $(window).ready(function() {
+            $("#slider-2").hide();
+            $("#sButton1").addClass("bg-purple-800");
+
+
+            loopSlider();
+
+
+
+
+
+
+        });
+    </script>
+    <link rel="stylesheet" href="index.css">
+    <title>About Us</title>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <div class="headHero background" style="background: rgba(0, 0, 0, 0.7) url(../img/bg.jpg); background-blend-mode: darken; background-size: cover; ">
+        <header class="text-gray-600 body-font">
+            <div class="head container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center" style="
+       max-width: 1235px;
+    padding: 10px 7px;">
+                <a href="../index.html">
+                    <div class="logo-img">
+                        <img style="
+                max-width: none;
+                height: 50px;
+                border: 1px solid white;
+                border-radius: 50%;" src="../img/logo1.png" alt="" class="logo">
+                    </div>
+                </a>
+                <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center" style="cursor: pointer; color: white; ">
+                    <a class="mr-5 bold:text hover:text-gray-500" href="../index.html">Home</a>
+                    <a class="mr-5 hover:text-gray-500" href="../Links/about.html">About</a>
+                    <a class="mr-5 hover:text-gray-500" href="../Links/course.html">Courses</a>
+                    <a class="mr-5 hover:text-gray-500" href="../Links/contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!-- ..................SLIDERS SECTION............... -->
+
+    <!-- component -->
+    <div style="font-family: 'Roboto', sans-serif;">
+
+        <div class="container flex flex-col px-6 py-4 mx-auto space-y-6 md:h-128 md:py-16 md:flex-row md:items-center md:space-x-6">
+            <div class="flex flex-col items-center w-full md:flex-row md:w-1/2">
+
+
+                <div class="max-w-lg md:mx-12 md:order-2">
+                    <h1 class="text-3xl font-medium tracking-wide text-gray-800 dark:text-white md:text-4xl" style="font-size: 300%; font-family: 'Roboto', sans-serif;"> <span style="text-decoration: underline 4px solid #1A374D;"> <b> Computer</span> Institute </b>
+                    </h1>
+                    <p class="mt-4 text-gray-600 dark:text-gray-300" style="font-size: 125%;"> iEducate Learning is a leading institute in Skill Development Trainings and Languages. We empower your skills which are highly demanded in the job market. <br> UI Learning has team of industry experts which trains you to take space
+                        in competent technical environment. <br> We are helping People to get valuable skills and assist them in job market.
+                    </p>
+
+                </div>
+            </div>
+            <div class="flex items-center justify-center w-full h-96 md:w-1/2">
+                <div class="sliderAx h-auto">
+                    <div id="slider-1" class="container mx-auto">
+                        <div>
+                            <img class="object-cover w-full h-full max-w-2xl rounded-md " src="https://uilearning.com/assets/img/about-img1.jpg " alt="apple watch photo ">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="slider-2" class="container mx-auto">
+
+                    <div>
+                        <img class="object-cover w-full h-full max-w-2xl rounded-md " src="https://uilearning.com/assets/img/about-img2.jpg " alt="apple watch photo ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- .......................LAST SECTION.................. -->
+        <section class="text-gray-600 body-font overflow-hidden" style="font-family: sans-serif; ">
+            <div class="container px-5 py-24 mx-auto ">
+                <div class="flex flex-wrap -m-12 ">
+                    <div class="p-12 md:w-1/2 flex flex-col items-start ">
+                        <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4 " style="font-size: 230%; font-family: sans-serif; "> <span class="underline " style="text-decoration: underline 5px #1A374D;"> <b> Who W</span>e Are? </b>
+                        </h2>
+                        <p class="leading-relaxed mb-8 " style="font-size: 130%;">IEDUCATE Learning vision is to provide such an interactive learning environment where academia and industry working together to produce skillful professionals who can be self-dependent, self-motivated, own- employed and fulfill
+                            the need of job market. <br> Ultimately they can contribute in the economic growth of the country.</p>
+
+
+                    </div>
+                    <div class="p-12 md:w-1/2 flex flex-col items-start ">
+                        <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4 " style="font-size: 230%; font-family: sans-serif; "> <span class="underline " style="text-decoration: underline 5px #1A374D;"> <b> Our Mis</span>sion? </b>
+                        </h2>
+                        <p class="leading-relaxed mb-8 " style="font-size: 130%;">Our mission is to promote Information Technology education with skill Development Trainings in the region. Furthermore we believe in the power of cutting-edge technology knowledge.
+                            <br> We want to build the skill set into youth who can meet the ever-growing demands of the IT job market throughout the globe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ..................FOOTER................. -->
+        <footer class="text-gray-600 body-font" style="margin-bottom: 0; padding-top: 300px; text-align: bottom; justify-content: bottom; height: 35%; background: rgba(0, 0, 0, 0.7) url(../img/bg.jpg); background-blend-mode: darken; background-size: cover; background-position-y: bottom; ">
+            <header class="text-white body-font">
+                <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                        <div class="logo-img">
+                            <img style="
+                    max-width: none;
+                    height: 45px;
+                    border: 1px solid white;
+                    border-radius: 50%;" src="../img/logo1.png" alt="" class="logo">
+                        </div>
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span class="ml-3 text-xl" style="align-items: baseline; color: white; font-size: 100%;">iEducate Learning</span>
+                    </a>
+                    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4" style="color: white;">© 2025 — All Rights Reserved
+                        <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank" style="color: white;">@imyousuf18</a>
+                    </p>
+                    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                        <a class="text-white">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a class="ml-3 text-white">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="w-5 h-5" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="ml-3 text-white">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                            </svg>
+                        </a>
+                        <a class="ml-3 text-white">
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path stroke="none"
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                                </path>
+                                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                            </svg>
+                        </a>
+                    </span>
+                </div>
+        </footer>
+</body>
+
+</html>
